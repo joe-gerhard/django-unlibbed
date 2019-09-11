@@ -1,10 +1,6 @@
 # Django Unlibbed
 
-<<<<<<< HEAD
-OH HAY THIS IS JOE
-=======
 OH HAY THIS IS BLAHHH
->>>>>>> f0b793e72b0fff63c01a1c89dc8b02c32d9d0395
 
 ## Objective
 
