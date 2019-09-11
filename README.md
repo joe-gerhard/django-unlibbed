@@ -1,6 +1,6 @@
 # Django Unlibbed
 
-OH HAY THIS IS DEV
+OH HAY THIS IS JOE
 
 ## Objective
 
