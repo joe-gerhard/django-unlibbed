@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('template/', views.TemplateListView.as_view(), name='template_index'),
-    path('template/<int:pk>', views.TemplateDetailView.as_view(), name="template_detail"),
+    path('template/<int:pk>/', views.TemplateDetailView.as_view(), name='template_detail'),
+    path('madlib/create/', views.MadlibCreateView.as_view(), name='madlib_create'),
 ]

@@ -16,3 +16,7 @@ class TemplateListView(ListView):
 
 class TemplateDetailView(DetailView):
     queryset = Template.objects.all()
+
+class MadlibCreateView(CreateView):
+    model = Madlib
+    fields = '__all__'
