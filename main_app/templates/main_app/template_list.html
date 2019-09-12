@@ -1,0 +1,11 @@
+{% extends 'main_app/base.html' %}
+
+{% block main %}
+<ul>
+{% for template in object_list %}
+    <a href="{% url "template_detail" template.id %}"><li>{{ template.name }}</li></a>
+{% empty %}
+    <li>There are no templates!</li>
+{% endfor %}
+</ul>
+{% endblock main %}

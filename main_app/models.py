@@ -22,6 +22,22 @@ class Template(models.Model):
     
     def get_absolute_url(self):
         return reverse("template_detail", kwargs={"pk": self.pk})
+
+    def get_blanks_count(self):
+        return len(self.blanks)
+
+    def get_formatted_text(self):
+        result = self.text
+        for idx, word in enumerate(self.blanks):
+            result = result.replace(f'[{idx}]', f'[{word}]')
+        return result
+
+    def get_text_with_blanks(self):
+        result = self.text
+        for idx, word in enumerate(self.blanks):
+            result = result.replace(f'[{idx}]', f'[blank]')
+        return result
+            
     
 
 class Madlib(models.Model):

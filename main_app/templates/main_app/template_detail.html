@@ -1,0 +1,13 @@
+{% extends 'main_app/base.html' %}
+
+{% block main %}
+<h1>Details for {{object.name}}</h1>
+<ul>
+<li>name: {{object.name}}</li>
+<li>blanks: {{object.blanks}}</li>
+<li>text: {{object.text|linebreaks}}</li>
+<li>number of blanks: {{object.get_blanks_count}}</li>
+<li>formatted text: {{object.get_formatted_text|linebreaks}}</li>
+<li>text with blanks: {{object.get_text_with_blanks|linebreaks}}</li>
+</ul>
+{% endblock main %}
