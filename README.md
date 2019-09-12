@@ -25,10 +25,10 @@ Django Unchained
 
 ## Wire Frames
 
-#####Web App:
+Web App:
 ![](Project3Wireframe1.png)
 
-#####Models:
+Models:
 ![](Project3Wireframe2.png)
 
 ## Screenshot(s)
