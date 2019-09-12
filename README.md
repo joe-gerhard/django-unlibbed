@@ -1,9 +1,5 @@
 # Django Unlibbed
 
-OH HAY THIS IS JOE
-
-OH HAY THIS IS BLAHHH
-
 ## Objective
 
 Interactive mad libs based on excerpts from the movie
@@ -17,9 +13,9 @@ Django Unchained
 
 - AAU I want to be able to log in and log out
 
-- AAU I want to click new lib to get a new random lib
+- AAU I want to click a button to get a new random lib
 
-- AAU I want to view my libs in order
+- AAU I want to view my completed libs in order
 
 - AAU I want to be able to edit and delete my libs
 
