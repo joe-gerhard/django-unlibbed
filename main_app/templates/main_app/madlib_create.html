@@ -9,6 +9,8 @@
         {{blank}}: <input type="text" name="blanks" required>
     </div>
 {% endfor %}
+<input type="hidden" name="text" value="{{template.text}}">
+<input type="hidden" name="name" value="{{template.name}}">
 <input type="submit" value="submit">
 </form>
 <a href="{% url 'madlib_new' %}">cancel</a>

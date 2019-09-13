@@ -24,6 +24,9 @@ class TemplateDetailView(LoginRequiredMixin, DetailView):
 @login_required
 def madlib_new_view(request):
     templates = Template.objects.all()
+    completed_libs = Madlib.objects.filter(user=request.user)
+    for lib in completed_libs:
+        templates = templates.exclude(name=lib.name)
     return render(request, 'main_app/madlib_new.html', {
         'templates': templates,
     })
@@ -31,14 +34,29 @@ def madlib_new_view(request):
 @login_required
 def madlib_create(request, template_id):
     if request.method == 'POST':
-        print(request.POST)
+        madlib = Madlib(
+            name = request.POST.get('name'),
+            words = request.POST.getlist('blanks'),
+            text = request.POST.get('text'),
+            user = request.user,
+        )
+        madlib.save()
+        return redirect('madlib_detail', pk=madlib.pk)
     template = Template.objects.get(id=template_id)
     return render(request, 'main_app/madlib_create.html', {
         'template': template,
     })
 
 class MadlibListView(LoginRequiredMixin, ListView):
+    def get_queryset(self):
+        return Madlib.objects.filter(user=self.request.user)
+
+class MadlibDetailView(LoginRequiredMixin, DetailView):
     queryset = Madlib.objects.all()
+
+class MadlibDeleteView(LoginRequiredMixin, DeleteView):
+    model = Madlib
+    success_url = '/madlib/'
 
 def signup(request):
     error_message = ''

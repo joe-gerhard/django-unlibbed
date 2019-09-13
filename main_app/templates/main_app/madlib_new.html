@@ -6,7 +6,7 @@
 {% for template in templates %}
     <a href="{% url "madlib_create" template.id %}"><li>{{ template.name }}</li></a>
 {% empty %}
-    <li>There are no templates!</li>
+    <li>You've finished all the libs!</li>
 {% endfor %}
 </ul>
 {% endblock main %}

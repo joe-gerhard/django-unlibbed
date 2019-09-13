@@ -1,0 +1,7 @@
+{% extends 'main_app/base.html' %}
+{% block main %}
+<h1>{{object.name}}</h1>
+<p>{{object.get_formatted_text|linebreaks}}</p>
+<a href="">Do it again!</a>
+<a href="{% url 'madlib_delete' object.id %}">Delete</a>
+{% endblock main %}

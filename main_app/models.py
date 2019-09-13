@@ -44,4 +44,8 @@ class Madlib(models.Model):
     def get_absolute_url(self):
         return reverse("madlib_detail", kwargs={"pk": self.pk})
     
-    
+    def get_formatted_text(self):
+        result = self.text
+        for idx, word in enumerate(self.words):
+            result = result.replace(f'[{idx}]', f'[{word}]')
+        return result  

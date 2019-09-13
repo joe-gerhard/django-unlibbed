@@ -8,5 +8,7 @@ urlpatterns = [
     path('madlib/new/', views.madlib_new_view, name='madlib_new'),
     path('madlib/create/<int:template_id>/', views.madlib_create, name='madlib_create'),
     path('madlib/', views.MadlibListView.as_view(), name='madlib_list'),
+    path('madlib/<int:pk>/', views.MadlibDetailView.as_view(), name='madlib_detail'),
+    path('madlib/<int:pk>/delete/', views.MadlibDeleteView.as_view(), name='madlib_delete'),
     path('accounts/signup', views.signup, name='signup'),
 ]
