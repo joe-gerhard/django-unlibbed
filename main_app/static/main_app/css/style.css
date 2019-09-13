@@ -1,7 +1,17 @@
 nav {
     display: flex;
+    border: 1px solid grey;
+}
+
+nav a, nav img {
+    margin: 20px;
 }
 
 footer {
     display: flex;
+    border: 1px solid grey;
+}
+
+footer span {
+    margin: 20px;
 }

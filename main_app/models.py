@@ -1,16 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.shortcuts import reverse
-
-class User(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("user_detail", kwargs={"pk": self.pk})
+from django.contrib.auth.models import User
 
 class Template(models.Model):
     name = models.CharField(max_length=50)
@@ -45,6 +36,7 @@ class Madlib(models.Model):
     words = ArrayField(models.CharField(max_length=50))
     text = models.TextField()
     date_completed = models.DateTimeField(auto_now=False, auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

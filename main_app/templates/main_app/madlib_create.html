@@ -1,0 +1,15 @@
+{% extends 'main_app/base.html' %}
+
+{% block main %}
+<h1>Create New Lib</h1>
+<form action="" method="POST">
+{% csrf_token %}
+{% for blank in template.blanks %}
+    <div>
+        {{blank}}: <input type="text" name="blanks" required>
+    </div>
+{% endfor %}
+<input type="submit" value="submit">
+</form>
+<a href="{% url 'madlib_new' %}">cancel</a>
+{% endblock main %}
