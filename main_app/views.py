@@ -54,6 +54,17 @@ class MadlibListView(LoginRequiredMixin, ListView):
 class MadlibDetailView(LoginRequiredMixin, DetailView):
     queryset = Madlib.objects.all()
 
+def madlib_update(request, madlib_id):
+    madlib = Madlib.objects.get(id=madlib_id) 
+    if request.method == 'POST':
+        madlib.words = request.POST.getlist('blanks')
+        madlib.save()
+        return redirect('madlib_detail', pk=madlib.pk)
+    template = Template.objects.get(name=madlib.name)
+    return render(request, 'main_app/madlib_update.html', {
+        'template': template,
+    })
+
 class MadlibDeleteView(LoginRequiredMixin, DeleteView):
     model = Madlib
     success_url = '/madlib/'
