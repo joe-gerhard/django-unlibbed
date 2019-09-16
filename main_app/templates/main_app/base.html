@@ -15,6 +15,7 @@
         <nav>
             <img class="logo" src="/static/main_app/images/pythonistas-unchained.PNG" alt="logo" height="50">
             <a href="{% url "home" %}">Home</a>
+            <a href="{% url "about" %}">About</a>
             {% if user.is_authenticated %}
             <!-- <a href="{% url "template_index" %}">Templates</a> -->
             <a href="{% url "madlib_new" %}">New Lib</a>

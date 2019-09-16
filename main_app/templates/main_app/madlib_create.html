@@ -13,7 +13,9 @@
 <input type="hidden" name="text" value="{{template.text}}">
 <input type="hidden" name="name" value="{{template.name}}">
 </div>
-<input type="submit" value="submit">
+<div class="btns">
+<input class="btn" type="submit" value="submit">
 </form>
-<a href="{% url 'madlib_new' %}">cancel</a>
+<a class="btn" href="{% url 'madlib_new' %}">cancel</a>
+</div>
 {% endblock main %}

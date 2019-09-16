@@ -13,12 +13,9 @@ a {
 
 nav {
     display: flex;
-    /* border: 1px solid black; */
     justify-content: flex-end;
     align-items: center;
-    /* background: rgba(252, 206, 58, 0.6); */
     background-color: rgba(31, 26, 9, 0.6);
-    /* border-radius: 7px; */
     margin: 0;
 }
 
@@ -82,43 +79,36 @@ h3 {
     background-color: #f7dba79a;
     border-radius: 7px;
     width: 75vw;
-    font-size: 2vw;
+    font-size: 25px;
     list-style: none;
 }
 
 .narrow {
-    width: 50vw;
+    width: 425px;
 }
 
 .detail a:hover {
     color: #660000;
 }
 
-.list,
-.form {
+.list {
     width: 40vw;
 }
 
 div.form {
     display: flex;
     justify-content: flex-end;
-    width: 40vw;
+    align-items: center;
 }
-
-.form input
 
 ul {
     list-style: none;
 }
-/* .template {
-    font-size: 2vw;
-} */
 
-
-#btns {
+/* #btns {
     display: flex;
     flex-direction: row;
-}
+} */
 
 .btn {
     text-decoration: none;
@@ -129,10 +119,11 @@ ul {
     padding: 5px;
     margin-right: 10px;
     box-shadow: -4px 4px 1px #f18f01;
+    max-width: 75px;
 }
 
-input.btn {
-    max-width: 75px;
+a.btn {
+    font-size: 20px;
 }
 
 .login {
@@ -146,7 +137,7 @@ input {
     border-radius: 7px;
     padding: 5px;
     margin: 5px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .btn:hover {
