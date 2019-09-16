@@ -1,11 +1,16 @@
 {% extends 'main_app/base.html' %}
 
 {% block main %}
-<ul>
-{% for madlib in object_list %}
-    <li><a href="{% url 'madlib_detail' madlib.id %}">{{ madlib.name }}</a></li>
+{% for scene_num, madlibs in scenes.items %}
+    <h3>Scene {{scene_num}}</h3>
+    <ul>
+        {% for madlib in madlibs %}
+        <li><a href="{% url 'madlib_detail' madlib.id %}">{{ madlib.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+ 
 {% empty %}
     <li>You haven't completed any libs!</li>
 {% endfor %}
-</ul>
 {% endblock main %}
