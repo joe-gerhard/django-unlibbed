@@ -1,7 +1,11 @@
 {% extends 'main_app/base.html' %}
 {% block main %}
 <h1>{{object.name}}</h1>
-<p>{{object.get_formatted_text|linebreaks}}</p>
-<a href="{% url 'madlib_update' object.id %}">Do it again!</a>
-<a href="{% url 'madlib_delete' object.id %}">Delete</a>
+<div class="detail">
+    <p>{{object.get_formatted_text|linebreaks}}</p>
+</div>
+<div class="btns">
+    <a class="btn" href="{% url 'madlib_update' object.id %}">Do it again!</a>
+    <a class="btn" href="{% url 'madlib_delete' object.id %}">Delete</a>
+</div>
 {% endblock main %}

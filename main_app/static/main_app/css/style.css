@@ -1,17 +1,113 @@
-nav {
-    display: flex;
-    border: 1px solid grey;
+* {
+    font-family: 'Squada One';
 }
 
-nav a, nav img {
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #14080e;
+}
+
+nav {
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: flex-end;
+    align-items: center;
+    /* background: rgba(252, 206, 58, 0.6); */
+    background-color: rgba(31, 26, 9, 0.6);
+    /* border-radius: 7px; */
+    margin: 0;
+}
+
+nav a {
     margin: 20px;
+    color: #f7dba7;
+    font-size: 20px;
+}
+
+nav a:hover, a:hover {
+    color: #f18f01;
+}
+
+img.logo {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+body {
+    background-image: url(/static/main_app/images/westerngraphic_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding: 0 5vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 75px;
+    color: #f7dba7;
+    text-shadow: -4px 4px 1px #14080e;
+    margin: 0;
+    margin: 5vh 0;
+}
+
+/* h1.hometitle {
+    font-size: 10vw;
+} */
+
+.detail {
+    border: 2px solid #14080e;
+    margin-bottom: 5vh;
+    padding: 10px;
+    text-decoration: none;
+    color: #14080e;
+    background-color: #f7dba79a;
+    border-radius: 7px;
+    width: 75vw;
+    font-size: 2.5vw;
+    list-style: none;
+}
+
+.template {
+    font-size: 2vw;
+}
+
+
+#btns {
+    display: flex;
+    flex-direction: row;
+}
+
+a.btn {
+    text-decoration: none;
+    color: #da2c38;
+    background-color: #f7dba7;
+    border: 2px solid #14080e;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 10px;
+    box-shadow: -4px 4px 1px #f18f01;
+}
+
+a.btn:hover {
+    background-color: #14080e;
+    color: #f18f01;
 }
 
 footer {
     display: flex;
-    border: 1px solid grey;
-}
-
-footer span {
+    align-items: center;
     margin: 20px;
+    color: #f7dba7;
+    font-size: 20px;
 }

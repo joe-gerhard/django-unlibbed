@@ -2,12 +2,18 @@
 
 {% block main %}
 <h1>Details for {{object.name}}</h1>
-<ul>
+<div class="template detail">
+<ul class>
 <li>name: {{object.name}}</li>
 <li>blanks: {{object.blanks}}</li>
+<br>
 <li>text: {{object.text|linebreaks}}</li>
 <li>number of blanks: {{object.get_blanks_count}}</li>
+<br>
 <li>formatted text: {{object.get_formatted_text|linebreaks}}</li>
+<br>
 <li>text with blanks: {{object.get_text_with_blanks|linebreaks}}</li>
+<br><br>
 </ul>
+</div>
 {% endblock main %}
