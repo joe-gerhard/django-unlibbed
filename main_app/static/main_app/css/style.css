@@ -2,6 +2,15 @@
     font-family: 'Squada One', cursive;
 }
 
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #14080e;
+}
+
 nav {
     display: flex;
     /* border: 1px solid black; */
@@ -16,12 +25,10 @@ nav {
 nav a {
     margin: 20px;
     color: #f7dba7;
-    text-decoration: none;
     font-size: 20px;
 }
 
-nav a:hover {
-    /* color: #da2c38; */
+nav a:hover, a:hover {
     color: #f18f01;
 }
 
@@ -40,23 +47,41 @@ body {
 }
 
 main {
-    padding: 5vw;
-    min-height: 100vh;
+    padding: 0 5vw;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* position: sticky; */
 }
 
 h1 {
     font-size: 75px;
     color: #f7dba7;
     text-shadow: -4px 4px 1px #14080e;
+    margin: 0;
+    margin: 5vh 0;
 }
 
-/* main.title {
-    text-align: center;
+/* h1.hometitle {
+    font-size: 10vw;
 } */
+
+.detail {
+    border: 2px solid #14080e;
+    margin-bottom: 5vh;
+    padding: 10px;
+    text-decoration: none;
+    color: #14080e;
+    background-color: #f7dba79a;
+    border-radius: 7px;
+    width: 75vw;
+    font-size: 2.5vw;
+    list-style: none;
+}
+
+.template {
+    font-size: 2vw;
+}
+
 
 #btns {
     display: flex;
