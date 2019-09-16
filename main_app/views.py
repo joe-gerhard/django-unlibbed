@@ -1,3 +1,5 @@
+import collections
+
 from django.shortcuts import render, redirect
 from .models import Template, Madlib
 from django.contrib.auth import login
@@ -23,8 +25,8 @@ class TemplateDetailView(LoginRequiredMixin, DetailView):
 
 @login_required
 def madlib_new_view(request):
-    templates = Template.objects.all()
-    completed_libs = Madlib.objects.filter(user=request.user)
+    templates = Template.objects.all().order_by('name')
+    completed_libs = Madlib.objects.filter(user=request.user).order_by('name')
     for lib in completed_libs:
         templates = templates.exclude(name=lib.name)
     scenes = {}
@@ -37,9 +39,11 @@ def madlib_new_view(request):
         else:
             scenes[scene_num].append(template)
 
+    ordered_scenes = collections.OrderedDict(sorted(scenes.items()))
+
     return render(request, 'main_app/madlib_new.html', {
         'templates': templates, 
-        'scenes': scenes
+        'scenes': ordered_scenes
     })
 
 @login_required
@@ -63,19 +67,36 @@ class MadlibListView(LoginRequiredMixin, ListView):
         return Madlib.objects.filter(user=self.request.user)
 
 def madlib_list_view(request):
-    madlibs = Madlib.objects.filter(user=request.user)
+
+    # variable declarations
+    madlibs = Madlib.objects.filter(user=request.user).order_by('name')
     scenes = {}
+
+    # push madlib instances into scenes dict
     for madlib in madlibs:
+
+        # the 7th char in madlib name (i.e. "Scene 1 - Part 2")
+        #                                          ^
         scene_num = madlib.name[6]
+
+        # remove the "Scene 1 - " from madlib.name
+        # so just "Part 2" remains
         madlib.name = madlib.name[10:]
+
+        # contruct scenes dict into 
+        # {<scene_num>: [<madlib object>, ...]} format
         if scene_num not in scenes:
             scenes[scene_num] = []
             scenes[scene_num].append(madlib)
         else:
             scenes[scene_num].append(madlib) 
+
+    # sort scenes dict by scene number
+    ordered_scenes = collections.OrderedDict(sorted(scenes.items()))
+    
     return render(request, 'main_app/madlib_list.html', {
         "madlibs": madlibs,
-        "scenes": scenes
+        "scenes": ordered_scenes
     })
 
 class MadlibDetailView(LoginRequiredMixin, DetailView):
