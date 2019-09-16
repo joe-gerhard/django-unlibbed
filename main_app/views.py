@@ -51,9 +51,26 @@ class MadlibListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Madlib.objects.filter(user=self.request.user)
 
+def madlib_list_view(request):
+    madlibs = Madlib.objects.filter(user=request.user)
+    scenes = {}
+    for madlib in madlibs:
+        scene_num = madlib.name[6]
+        if scene_num not in scenes:
+            scenes[scene_num] = []
+            scenes[scene_num].append(madlib)
+        else:
+            scenes[scene_num].append(madlib) 
+    print(scenes)
+    return render(request, 'main_app/madlib_list.html', {
+        "madlibs": madlibs,
+        "scenes": scenes
+    })
+
 class MadlibDetailView(LoginRequiredMixin, DetailView):
     queryset = Madlib.objects.all()
 
+@login_required
 def madlib_update(request, madlib_id):
     madlib = Madlib.objects.get(id=madlib_id) 
     if request.method == 'POST':

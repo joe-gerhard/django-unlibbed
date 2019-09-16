@@ -2,7 +2,7 @@
 
 {% block main %}
 <ul>
-{% for madlib in object_list %}
+{% for madlib in madlibs %}
     <li><a href="{% url 'madlib_detail' madlib.id %}">{{ madlib.name }}</a></li>
 {% empty %}
     <li>You haven't completed any libs!</li>
