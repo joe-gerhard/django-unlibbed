@@ -61,6 +61,14 @@ h1 {
     margin: 5vh 0;
 }
 
+h3 {
+    font-size: 40px;
+    color: #f7dba7;
+    text-shadow: -4px 4px 1px #14080e;
+    margin: 0;
+    margin: 5vh 0;
+}
+
 /* h1.hometitle {
     font-size: 10vw;
 } */
@@ -78,6 +86,30 @@ h1 {
     list-style: none;
 }
 
+.narrow {
+    width: 50vw;
+}
+
+.detail a:hover {
+    color: #660000;
+}
+
+.list,
+.form {
+    width: 40vw;
+}
+
+div.form {
+    display: flex;
+    justify-content: flex-end;
+    width: 40vw;
+}
+
+.form input
+
+ul {
+    list-style: none;
+}
 /* .template {
     font-size: 2vw;
 } */

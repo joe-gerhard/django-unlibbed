@@ -3,11 +3,13 @@
 {% block main %}
 {% for scene_num, madlibs in scenes.items %}
     <h3>Scene {{scene_num}}</h3>
+    <div class="detail list">
     <ul>
         {% for madlib in madlibs %}
         <li><a href="{% url 'madlib_detail' madlib.id %}">{{ madlib.name }}</a></li>
         {% endfor %}
     </ul>
+    </div>
 
  
 {% empty %}
