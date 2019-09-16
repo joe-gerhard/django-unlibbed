@@ -1,14 +1,17 @@
 {% extends 'main_app/base.html' %}
 
 {% block main %}
-<h3>Pick a Lib!</h3>
-<div class="detail list">
-    <ul>
-    {% for template in templates %}
-        <a href="{% url "madlib_create" template.id %}"><li>{{ template.name }}</li></a>
+<h1>Pick a Lib!</h1>
+{% for scene_num, templates in scenes.items %}
+    <h3>Scene {{scene_num}}</h3>
+    <div class="detail list">
+        <ul>
+            {% for template in templates %}
+            <li><a href="{% url 'madlib_create' template.id %}">{{ template.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     {% empty %}
-        <li>You've finished all the libs!</li>
+        <h3>You've finished all the libs!</h3>
     {% endfor %}
-    </ul>
-</div>
 {% endblock main %}
