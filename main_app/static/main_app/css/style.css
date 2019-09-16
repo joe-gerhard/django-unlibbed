@@ -78,9 +78,9 @@ h1 {
     list-style: none;
 }
 
-.template {
+/* .template {
     font-size: 2vw;
-}
+} */
 
 
 #btns {
@@ -88,7 +88,7 @@ h1 {
     flex-direction: row;
 }
 
-a.btn {
+.btn {
     text-decoration: none;
     color: #da2c38;
     background-color: #f7dba7;
@@ -99,7 +99,25 @@ a.btn {
     box-shadow: -4px 4px 1px #f18f01;
 }
 
-a.btn:hover {
+input.btn {
+    max-width: 75px;
+}
+
+.login {
+    width: 25vw;
+    margin-bottom: 2px;
+}
+
+input {
+    background-color: #f7dba7;
+    border: 2px solid #14080e;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:hover {
     background-color: #14080e;
     color: #f18f01;
 }
