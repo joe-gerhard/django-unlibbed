@@ -56,12 +56,12 @@ def madlib_list_view(request):
     scenes = {}
     for madlib in madlibs:
         scene_num = madlib.name[6]
+        madlib.name = madlib.name[10:]
         if scene_num not in scenes:
             scenes[scene_num] = []
             scenes[scene_num].append(madlib)
         else:
             scenes[scene_num].append(madlib) 
-    print(scenes)
     return render(request, 'main_app/madlib_list.html', {
         "madlibs": madlibs,
         "scenes": scenes
