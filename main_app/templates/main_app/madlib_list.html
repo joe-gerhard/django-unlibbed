@@ -3,7 +3,7 @@
 {% block main %}
 <h1>Your Completed Libs</h1>
 {% for scene_num, madlibs in scenes.items %}
-    <h3>Scene {{scene_num}}</h3>
+    <h2>Scene {{scene_num}}</h2>
     <div class="detail list">
         <ul>
             {% for madlib in madlibs %}
@@ -12,6 +12,6 @@
         </ul>
     </div>
 {% empty %}
-    <h3>You haven't completed any libs!</h3>
+    <h2>You haven't completed any libs!</h2>
 {% endfor %}
 {% endblock main %}

@@ -54,16 +54,25 @@ h1 {
     font-size: 75px;
     color: #f7dba7;
     text-shadow: -4px 4px 1px #14080e;
-    margin: 0;
     margin: 5vh 0;
 }
 
-h3 {
+h2 {
     font-size: 40px;
     color: #f7dba7;
     text-shadow: -4px 4px 1px #14080e;
-    margin: 0;
     margin: 5vh 0;
+}
+
+h2.dev-name {
+    margin: 0;
+}
+
+h3 {
+    font-size: 30px;
+    color: #660000;
+    /* text-shadow: -4px 4px 1px #14080e; */
+    margin: 0;
 }
 
 /* h1.hometitle {

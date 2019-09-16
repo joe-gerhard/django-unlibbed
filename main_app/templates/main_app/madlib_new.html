@@ -3,7 +3,7 @@
 {% block main %}
 <h1>Pick a Lib!</h1>
 {% for scene_num, templates in scenes.items %}
-    <h3>Scene {{scene_num}}</h3>
+    <h2>Scene {{scene_num}}</h2>
     <div class="detail list">
         <ul>
             {% for template in templates %}
@@ -12,6 +12,6 @@
         </ul>
     </div>
     {% empty %}
-        <h3>You've finished all the libs!</h3>
+        <h2>You've finished all the libs!</h2>
     {% endfor %}
 {% endblock main %}
