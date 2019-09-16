@@ -112,4 +112,6 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+def about(request):
+    return render(request, 'main_app/about.html')
 
