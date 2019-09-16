@@ -27,8 +27,19 @@ def madlib_new_view(request):
     completed_libs = Madlib.objects.filter(user=request.user)
     for lib in completed_libs:
         templates = templates.exclude(name=lib.name)
+    scenes = {}
+    for template in templates:
+        scene_num = template.name[6]
+        template.name = template.name[10:]
+        if scene_num not in scenes:
+            scenes[scene_num] = []
+            scenes[scene_num].append(template)
+        else:
+            scenes[scene_num].append(template)
+
     return render(request, 'main_app/madlib_new.html', {
-        'templates': templates,
+        'templates': templates, 
+        'scenes': scenes
     })
 
 @login_required
@@ -86,6 +97,7 @@ class MadlibDeleteView(LoginRequiredMixin, DeleteView):
     model = Madlib
     success_url = '/madlib/'
 
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
@@ -99,4 +111,5 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
 
