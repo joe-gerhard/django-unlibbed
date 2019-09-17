@@ -1,0 +1,21 @@
+{% extends 'main_app/base.html' %}
+
+{% block main %}
+<h1>Update {{template.name}}</h1>
+<div class="detail narrow">
+<form action="" method="POST">
+{% csrf_token %}
+{% for blank in template.blanks %}
+    <div class="form">
+        {{blank}}: <input type="text" name="blanks" required>
+    </div>
+{% endfor %}
+    <input type="hidden" name="text" value="{{template.text}}">
+    <input type="hidden" name="name" value="{{template.name}}">
+    </div>
+    <div class="btns">
+        <input class="btn" type="submit" value="submit">
+    </form>
+<a class="btn" href="{% url 'madlib_list' %}">cancel</a>
+</div>
+{% endblock main %}

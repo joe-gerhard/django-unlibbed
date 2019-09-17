@@ -1,0 +1,202 @@
+* {
+    font-family: 'Squada One';
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #14080e;
+}
+
+.text-color {
+    color: #da2c38;
+    text-decoration: yellow wavy underline;
+    text-decoration-skip-ink: none;
+    /* padding: 10px; */
+    /* text-shadow: -1px 1px 2px #14080e; */
+    /* border-radius: 10px;
+    background-color: #f18f01; */
+}
+
+span.helptext,
+form li {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(31, 26, 9, 0.6);
+    margin: 0;
+}
+
+nav a {
+    margin: 20px;
+    color: #f7dba7;
+    font-size: 20px;
+}
+
+nav a:hover, a:hover {
+    color: #f18f01;
+}
+
+img.logo {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+body {
+    background-image: url(/static/main_app/images/westerngraphic_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding: 0 5vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 75px;
+    color: #f7dba7;
+    text-shadow: -4px 4px 1px #14080e;
+    margin: 5vh 0;
+}
+
+h2 {
+    font-size: 40px;
+    color: #f7dba7;
+    text-shadow: -4px 4px 1px #14080e;
+    margin: 5vh 0;
+}
+
+h2.dev-name {
+    margin: 0;
+}
+
+h3 {
+    font-size: 30px;
+    color: #660000;
+    /* text-shadow: -4px 4px 1px #14080e; */
+    margin: 0;
+}
+
+.detail {
+    border: 2px solid #14080e;
+    margin-bottom: 5vh;
+    padding: 10px;
+    text-decoration: none;
+    color: #14080e;
+    background-color: #f7dba79a;
+    border-radius: 7px;
+    width: 75vw;
+    font-size: 25px;
+    list-style: none;
+}
+
+.narrow {
+    width: 425px;
+}
+
+.signup {
+    width: 450px;
+    margin-bottom: 4px;
+    justify-content: flex-end;
+}
+
+.signup p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* #id_username,
+#id_password1 {
+    width: 310px;
+} */
+
+.detail a:hover {
+    color: #660000;
+}
+
+.list {
+    width: 20vw;
+    max-width: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* #btns {
+    display: flex;
+    flex-direction: row;
+} */
+
+.btn {
+    text-decoration: none;
+    color: #da2c38;
+    background-color: #f7dba7;
+    border: 2px solid #14080e;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 10px;
+    box-shadow: -4px 4px 1px #f18f01;
+    max-width: 75px;
+}
+
+a.btn {
+    font-size: 20px;
+}
+
+.login {
+    width: 25vw;
+    min-width: 350px;
+    margin-bottom: 2px;
+}
+
+input {
+    background-color: #f7dba7;
+    border: 2px solid #14080e;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #14080e;
+    color: #f18f01;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    color: #f7dba7;
+    font-size: 20px;
+}
