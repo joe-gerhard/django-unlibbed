@@ -5,9 +5,11 @@
 {% if error_message %}
 <p>{{error_message}}</p>
 {% endif %}
+<div class="detail signup form">
 <form method="POST" action="{% url 'signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="signup">
+</div>
+  <input class="btn" type="submit" value="signup">
 </form>
 {% endblock main %}
