@@ -47,5 +47,5 @@ class Madlib(models.Model):
     def get_formatted_text(self):
         result = self.text
         for idx, word in enumerate(self.words):
-            result = result.replace(f'[{idx}]', f'[{word}]')
+            result = result.replace(f'[{idx}]', f'<span class="text-color">{word}</span>')
         return result  
