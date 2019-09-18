@@ -10,20 +10,16 @@ a {
     text-decoration: none;
     color: #14080e;
 }
-/* 
-.text-color {
-    color: #660000;
-} */
 
 .text-color {
+    color: #660000;
+}
+
+/* .text-color {
     color: #da2c38;
     text-decoration: yellow wavy underline;
     text-decoration-skip-ink: none;
-    /* padding: 10px; */
-    /* text-shadow: -1px 1px 2px #14080e; */
-    /* border-radius: 10px;
-    background-color: #f18f01; */
-}
+} */
 
 span.helptext,
 form li {
@@ -124,12 +120,6 @@ h3 {
     justify-content: space-between;
     align-items: center;
 }
-
-
-/* #id_username,
-#id_password1 {
-    width: 310px;
-} */
 
 .detail a:hover {
     color: #660000;
