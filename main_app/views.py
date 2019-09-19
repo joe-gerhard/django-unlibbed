@@ -72,19 +72,17 @@ def madlib_list_view(request):
     madlibs = Madlib.objects.filter(user=request.user).order_by('name')
     scenes = {}
 
-    # push madlib instances into scenes dict
+    # build scenes dictionary from madlibs
     for madlib in madlibs:
 
-        # the 7th char in madlib name (i.e. "Scene 1 - Part 2")
-        #                                          ^
+        # scene_num = the 7th char in madlib name (i.e. "Scene 1 - Part 2")
+        #                                                      ^
         scene_num = madlib.name[6]
 
-        # remove the "Scene 1 - " from madlib.name
-        # so just "Part 2" remains
+        # remove the "Scene 1 - " from madlib.name so just "Part 2" remains
         madlib.name = madlib.name[10:]
 
-        # contruct scenes dict into 
-        # {<scene_num>: [<madlib object>, ...]} format
+        # contruct scenes dict into {<scene_num>: [<madlib object>, ...]} format
         if scene_num not in scenes:
             scenes[scene_num] = []
             scenes[scene_num].append(madlib)
