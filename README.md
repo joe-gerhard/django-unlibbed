@@ -5,7 +5,7 @@
 Interactive mad libs based on excerpts from the movie
 Django Unchained
 
-## Technology User
+## Technology Used
 
 - Python
 - Django
